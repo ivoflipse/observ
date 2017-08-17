@@ -82,11 +82,10 @@ def wrap_method(cls, method, inserted):
     original_method = getattr(cls, method)
 
     def new_method(self, *args, **kwargs):
-        old_value = self.root_observable
         result = original_method(self, *args, **kwargs)
         if inserted:
             self.__observe_elements__()
-        self.root_observable.notify(old_value=old_value, value=self.root_observable)
+        self.root_observable.notify(new_value=self.root_observable)
         return result
     return new_method
 
