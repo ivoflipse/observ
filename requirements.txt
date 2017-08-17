@@ -1,0 +1,4 @@
+# testing requirements
+pytest
+flake8
+flake8-import-order

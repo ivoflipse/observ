@@ -1,0 +1,16 @@
+language: python
+
+os:
+  - linux
+
+sudo: false
+
+matrix:
+  fast_finish: true
+
+python:
+  - 3.6
+
+script:  
+  - pytest
+  - flake8
