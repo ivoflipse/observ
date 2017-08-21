@@ -1,11 +1,11 @@
 from .collections import ObservableDict, ObservableList, ObservableSet
-from .observable import Observable
+from .observable import ObservableMixin
 
 
 __all__ = ('ObservableProperty',)
 
 
-class ObservableProperty(Observable):
+class ObservableProperty(ObservableMixin):
     def __init__(self, initial_value_generator):
         super().__init__()
         assert callable(initial_value_generator)

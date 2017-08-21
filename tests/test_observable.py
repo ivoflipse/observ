@@ -6,7 +6,7 @@ import observ
 def test_notify():
     mock = Mock()
 
-    observable = observ.Observable()
+    observable = observ.ObservableMixin()
     observable.subscribe(mock)
     observable.notify(val=True)
 

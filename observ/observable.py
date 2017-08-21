@@ -1,4 +1,4 @@
-class Observable:
+class ObservableMixin:
     def __init__(self):
         self._subscribers = []
 
@@ -8,6 +8,6 @@ class Observable:
     def unsubscribe(self, subscriber):
         self._subscribers.remove(subscriber)
 
-    def notify(self, **kwargs):
+    def notify(self, *args, **kwargs):
         for subscriber in self._subscribers:
-            subscriber(**kwargs)
+            subscriber(*args, **kwargs)
