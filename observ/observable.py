@@ -5,6 +5,9 @@ class ObservableMixin:
     def subscribe(self, subscriber):
         self._subscribers.append(subscriber)
 
+    def is_subscribed(self, subscriber):
+        return subscriber in self._subscribers
+
     def unsubscribe(self, subscriber):
         self._subscribers.remove(subscriber)
 
